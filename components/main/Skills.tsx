@@ -6,21 +6,19 @@ import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
 import Image from "next/image";
 import { Backend_skill, Frontend_skill } from "@/constants";
 
-// Animation des icônes
 const iconAnimation = {
   hidden: { opacity: 0, y: 20 },
   visible: (index: number) => ({
     opacity: 1,
     y: 0,
     transition: {
-      delay: index * 0.1, // Délai dynamique pour chaque icône
+      delay: index * 0.1,
       duration: 0.5,
       ease: "easeOut",
     },
   }),
 };
 
-// Icônes avec animation
 interface SkillDataProps {
   src: string;
   width: number;
@@ -42,7 +40,6 @@ const SkillDataProvider = ({ src, width, height, index }: SkillDataProps) => {
   );
 };
 
-// Titre & Sous-titre
 const SkillText = () => {
   return (
     <div className="w-full h-auto flex flex-col items-center justify-center lg:-mt-24">
@@ -69,7 +66,6 @@ const SkillText = () => {
   );
 };
 
-// Section Skills
 const Skills = () => {
   return (
     <section
@@ -77,10 +73,8 @@ const Skills = () => {
       className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden pb-40 py-20"
       style={{ transform: "scale(0.9)" }}
     >
-      {/* Texte avec animation */}
       <SkillText />
 
-      {/* Icônes Frontend */}
       <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
         {Frontend_skill.map((image, index) => (
           <SkillDataProvider
@@ -93,7 +87,6 @@ const Skills = () => {
         ))}
       </div>
 
-      {/* Icônes Backend */}
       <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
         {Backend_skill.map((image, index) => (
           <SkillDataProvider

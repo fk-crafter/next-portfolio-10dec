@@ -64,7 +64,7 @@ export const Backend_skill = [
   },
   {
     skill_name: "PostgreSQL",
-    Image: "/postger.png",
+    Image: "/postgre.png",
     width: 70,
     height: 70,
   },
