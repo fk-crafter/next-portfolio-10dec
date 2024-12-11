@@ -36,18 +36,25 @@ const Contact = () => {
     >
       <motion.h2
         initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#7b92b4] to-[#6f87ae] mb-10 text-center"
       >
         Contact Me
       </motion.h2>
 
-      <div className="flex flex-col md:flex-row justify-between items-start max-w-6xl w-full gap-10">
+      <motion.div
+        className="flex flex-col md:flex-row justify-between items-start max-w-6xl w-full gap-10"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+      >
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          variants={{
+            hidden: { opacity: 0, x: -50 },
+            visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+          }}
           className="w-full md:w-1/2 flex flex-col justify-start relative text-gray-300 space-y-4 text-center md:text-left"
         >
           <p className="text-lg leading-relaxed">
@@ -62,9 +69,10 @@ const Contact = () => {
         <motion.form
           ref={form}
           onSubmit={sendEmail}
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          variants={{
+            hidden: { opacity: 0, x: 50 },
+            visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+          }}
           className="w-full md:w-1/2 space-y-4 bg-[#1a1c2b] p-6 rounded-lg shadow-lg"
         >
           <div>
@@ -113,7 +121,7 @@ const Contact = () => {
             Send Message
           </button>
         </motion.form>
-      </div>
+      </motion.div>
     </section>
   );
 };
