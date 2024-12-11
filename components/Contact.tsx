@@ -14,7 +14,6 @@ const Contact = () => {
       id="contact"
       className="flex flex-col items-center justify-center py-20 z-20 px-4"
     >
-      {/* Titre animé */}
       <motion.h2
         initial="hidden"
         whileInView="visible"
@@ -25,14 +24,12 @@ const Contact = () => {
         Contact Me
       </motion.h2>
 
-      {/* Container Principal */}
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         className="flex flex-col md:flex-row justify-between items-start max-w-6xl w-full gap-10"
       >
-        {/* Texte à gauche */}
         <motion.div
           variants={{
             hidden: { opacity: 0, x: -50 },
@@ -49,7 +46,6 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        {/* Formulaire à droite */}
         <motion.form
           variants={{
             hidden: { opacity: 0, x: 50 },

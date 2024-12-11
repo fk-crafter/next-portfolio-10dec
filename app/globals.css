@@ -3,12 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Police cursive personnalisée */
 .cursive {
   font-family: "Cedarville Cursive", cursive;
 }
 
-/* Texte d'accueil avec dégradé */
 .Welcome-text {
   background: linear-gradient(
       0deg,
@@ -22,7 +20,6 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* Boîte de bienvenue avec bordure et ombre */
 .Welcome-box {
   isolation: isolate;
   overflow: hidden;
@@ -38,7 +35,6 @@
   border: 1px solid rgba(75, 85, 99, 0.4);
 }
 
-/* Bouton principal avec un look sombre et neon */
 .button-primary {
   background: linear-gradient(
       180deg,
@@ -61,7 +57,6 @@
   transform: scale(1.05);
 }
 
-/* Effet de dégradé de fond pour le corps */
 body {
   background: linear-gradient(to bottom, #0f172a, #1e293b);
   color: white;
@@ -69,7 +64,6 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Effet de scroll caché */
 .scrollbar-hidden {
   -ms-overflow-style: none;
   scrollbar-width: none;

@@ -108,19 +108,19 @@ const Navbar = () => {
         <div className="lg:hidden flex flex-col items-start bg-[#1e293b] px-6 py-4 rounded-lg">
           <a
             href="#about-me"
-            className="py-2 text-gray-300 hover:text-[#a855f7] transition-all duration-300"
+            className="py-2 text-gray-300 hover:text-[#3b82f6] transition-all duration-300"
           >
             About me
           </a>
           <a
             href="#skills"
-            className="py-2 text-gray-300 hover:text-[#a855f7] transition-all duration-300"
+            className="py-2 text-gray-300 hover:text-[#3b82f6] transition-all duration-300"
           >
             Skills
           </a>
           <a
             href="#projects"
-            className="py-2 text-gray-300 hover:text-[#a855f7] transition-all duration-300"
+            className="py-2 text-gray-300 hover:text-[#3b82f6] transition-all duration-300"
           >
             Projects
           </a>
@@ -128,7 +128,7 @@ const Navbar = () => {
             href="https://github.com/fk-crafter"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-start gap-2 py-2 text-gray-300 hover:text-[#a855f7] transition-all duration-300"
+            className="flex items-center justify-start gap-2 py-2 text-gray-300 hover:text-[#3b82f6] transition-all duration-300"
           >
             <Image
               src="/github-142-svgrepo-com.svg"
