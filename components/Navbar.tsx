@@ -21,7 +21,7 @@ const Navbar = () => {
             height={50}
             className="cursor-pointer hover:animate-slowspin"
           />
-          <span className="font-bold ml-2 text-gray-300 hover:text-[#a855f7] transition-all duration-300">
+          <span className="font-bold ml-2 text-gray-300 hover:text-[#3b82f6] transition-all duration-300">
             Fk-Crafter
           </span>
         </a>
@@ -30,21 +30,27 @@ const Navbar = () => {
           <div className="flex w-full justify-between border border-[#3b82f6] bg-[#1e293b]/50 px-5 py-2 rounded-full text-gray-200">
             <a
               href="#about-me"
-              className="hover:text-[#a855f7] transition-all duration-300"
+              className="hover:text-[#3b82f6] transition-all duration-300"
             >
               About me
             </a>
             <a
               href="#skills"
-              className="hover:text-[#a855f7] transition-all duration-300"
+              className="hover:text-[#3b82f6] transition-all duration-300"
             >
               Skills
             </a>
             <a
               href="#projects"
-              className="hover:text-[#a855f7] transition-all duration-300"
+              className="hover:text-[#3b82f6] transition-all duration-300"
             >
               Projects
+            </a>
+            <a
+              href="#contact"
+              className="hover:text-[#3b82f6] transition-all duration-300"
+            >
+              Contact
             </a>
           </div>
         </div>
@@ -85,7 +91,7 @@ const Navbar = () => {
             href="https://github.com/fk-crafter"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-10 h-10 rounded-full bg-[#1e40af] hover:bg-[#9333ea] shadow-lg shadow-[#3b82f6]/50 transition-all duration-300"
+            className="flex items-center justify-center w-10 h-10 rounded-full bg-[#1e40af] hover:bg-[#3b82f6] shadow-lg shadow-[#3b82f6]/50 transition-all duration-300"
           >
             <Image
               src="/github-142-svgrepo-com.svg"

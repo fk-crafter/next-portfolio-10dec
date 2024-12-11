@@ -9,7 +9,7 @@ const Footer = () => {
           href="https://github.com/fk-crafter"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 text-[18px] font-semibold hover:text-[#6e5494] transition-all duration-300"
+          className="flex items-center gap-2 text-[18px] font-semibold hover:text-[#3b82f6] transition-all duration-300"
           style={{ cursor: "pointer" }}
         >
           <RxGithubLogo className="text-2xl" />
