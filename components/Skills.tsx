@@ -24,9 +24,16 @@ interface SkillDataProps {
   width: number;
   height: number;
   index: number;
+  customClass?: string;
 }
 
-const SkillDataProvider = ({ src, width, height, index }: SkillDataProps) => {
+const SkillDataProvider = ({
+  src,
+  width,
+  height,
+  index,
+  customClass,
+}: SkillDataProps) => {
   return (
     <motion.div
       initial="hidden"
@@ -35,7 +42,13 @@ const SkillDataProvider = ({ src, width, height, index }: SkillDataProps) => {
       custom={index}
       variants={iconAnimation}
     >
-      <Image src={src} width={width} height={height} alt="skill image" />
+      <Image
+        src={src}
+        width={width}
+        height={height}
+        alt="skill image"
+        className={customClass || ""}
+      />
     </motion.div>
   );
 };
@@ -83,6 +96,7 @@ const Skills = () => {
             width={image.width}
             height={image.height}
             index={index}
+            customClass={image.customClass}
           />
         ))}
       </div>

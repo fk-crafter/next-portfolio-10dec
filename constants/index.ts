@@ -53,6 +53,13 @@ export const Frontend_skill = [
     width: 80,
     height: 80,
   },
+  {
+    skill_name: "Three.js",
+    Image: "/threejs.png",
+    width: 80,
+    height: 80,
+    customClass: "invert brightness-200", // Ajoute la classe ici
+  },
 ];
 
 export const Backend_skill = [
