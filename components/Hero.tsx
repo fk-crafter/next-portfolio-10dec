@@ -54,12 +54,15 @@ const Hero = () => {
 
           <p className="text-lg text-gray-300 my-5 max-w-[600px] leading-relaxed">
             Hello, I&apos;m{" "}
-            <span className="text-[#60a5fa] font-semibold">FK-Crafter</span>, a
-            passionate{" "}
+            <span className="text-[#60a5fa] font-semibold">FK-Crafter</span>, a{" "}
             <span className="text-[#a78bfa] font-semibold pr-1">
-              Front-end Developer
+              Fullstack Developer
+            </span>{" "}
+            with a specialization in{" "}
+            <span className="text-[#60a5fa] font-semibold">
+              Front-end Development
             </span>
-            dedicated to building high-quality, interactive websites and
+            . I am dedicated to building high-quality, interactive websites and
             software solutions that stand out.
           </p>
         </motion.div>

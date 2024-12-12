@@ -125,6 +125,12 @@ const Navbar = () => {
             Projects
           </a>
           <a
+            href="#contact"
+            className="py-2 text-gray-300 hover:text-[#3b82f6] transition-all duration-300"
+          >
+            Contact
+          </a>
+          <a
             href="https://github.com/fk-crafter"
             target="_blank"
             rel="noopener noreferrer"
