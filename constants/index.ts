@@ -75,3 +75,33 @@ export const Backend_skill = [
     height: 70,
   },
 ];
+
+export const projectData = [
+  {
+    src: "/site1.png",
+    title: "Lorem Ipsum 1",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    technologies: [
+      "/next.png",
+      "/tailwind.png",
+      "/ts.png",
+      "/framer.png",
+      "/icon.png",
+    ],
+  },
+  {
+    src: "/site2.png",
+    title: "Lorem Ipsum 2",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    technologies: ["/next.png", "/tailwind.png", "/ts.png", "/magicui.png"],
+  },
+  {
+    src: "/site3.png",
+    title: "Lorem Ipsum 3",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    technologies: ["/next.png", "/tailwind.png", "/ts.png", "/framer.png"],
+  },
+];
