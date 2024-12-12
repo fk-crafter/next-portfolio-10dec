@@ -189,6 +189,31 @@ const Hero = () => {
               style={glowStyle}
             />
           </motion.div>
+
+          <motion.div
+            animate={generateFloatingAnimation(2.2)}
+            className="absolute bottom-[55%] left-[30%] transform -translate-y-1/2"
+          >
+            <Image
+              src="/postgre.png"
+              alt="PostgreSQL"
+              width={50}
+              height={50}
+              style={glowStyle}
+            />
+          </motion.div>
+          <motion.div
+            animate={generateFloatingAnimation(2.2)}
+            className="absolute bottom-[10%] left-[15%] transform -translate-y-1/2"
+          >
+            <Image
+              src="/framer.png"
+              alt="Framer Motion"
+              width={50}
+              height={50}
+              style={glowStyle}
+            />
+          </motion.div>
         </motion.div>
       </motion.div>
     </div>
