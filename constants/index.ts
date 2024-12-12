@@ -58,7 +58,7 @@ export const Frontend_skill = [
     Image: "/threejs.png",
     width: 80,
     height: 80,
-    customClass: "invert brightness-200", // Ajoute la classe ici
+    customClass: "invert brightness-200",
   },
 ];
 
