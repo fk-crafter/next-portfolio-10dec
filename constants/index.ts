@@ -87,7 +87,7 @@ export const projectData = [
       "/tailwind.png",
       "/ts.png",
       "/framer.png",
-      "/icon.png",
+      "/magicui.png",
     ],
     link: "https://finvest-eta.vercel.app/",
   },
@@ -96,7 +96,7 @@ export const projectData = [
     title: "TechCorp",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    technologies: ["/next.png", "/tailwind.png", "/ts.png"],
+    technologies: ["/next.png", "/tailwind.png", "/ts.png", "/framer.png"],
     link: "https://tech-corp-one.vercel.app/",
   },
   {
