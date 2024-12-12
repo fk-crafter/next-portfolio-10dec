@@ -79,7 +79,7 @@ export const Backend_skill = [
 export const projectData = [
   {
     src: "/site1.png",
-    title: "Lorem Ipsum 1",
+    title: "FinVest",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     technologies: [
@@ -89,19 +89,22 @@ export const projectData = [
       "/framer.png",
       "/icon.png",
     ],
+    link: "https://finvest-eta.vercel.app/",
   },
   {
     src: "/site2.png",
-    title: "Lorem Ipsum 2",
+    title: "TechCorp",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     technologies: ["/next.png", "/tailwind.png", "/ts.png", "/magicui.png"],
+    link: "https://tech-corp-one.vercel.app/",
   },
   {
     src: "/site3.png",
-    title: "Lorem Ipsum 3",
+    title: "TripHub",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     technologies: ["/next.png", "/tailwind.png", "/ts.png", "/framer.png"],
+    link: "https://triphub-one.vercel.app/",
   },
 ];
