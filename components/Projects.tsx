@@ -6,17 +6,20 @@ import Image from "next/image";
 import { projectData } from "@/constants";
 
 const cardAnimation = {
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0 },
   visible: (index: number) => ({
     opacity: 1,
-    y: 0,
-    transition: { delay: index * 0.2, duration: 0.5, ease: "easeOut" },
+    transition: {
+      delay: index * 0.1,
+      duration: 0.5,
+      ease: "easeOut",
+    },
   }),
 };
 
 const titleAnimation = {
-  hidden: { opacity: 0, y: -20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.5 } },
 };
 
 const Projects = () => {
@@ -50,7 +53,7 @@ const Projects = () => {
               viewport={{ once: true }}
               custom={index}
               variants={cardAnimation}
-              className="relative overflow-hidden rounded-lg shadow-lg border border-[#2A0E61] hover:scale-105 transition-transform duration-300"
+              className="relative overflow-hidden rounded-lg shadow-lg border border-[#2A0E61]  transition-transform duration-300"
             >
               <Image
                 src={project.src}
