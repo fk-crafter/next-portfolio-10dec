@@ -104,7 +104,13 @@ export const projectData = [
     title: "TripHub",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    technologies: ["/next.png", "/tailwind.png", "/ts.png", "/framer.png"],
+    technologies: [
+      "/next.png",
+      "/tailwind.png",
+      "/ts.png",
+      "/framer.png",
+      "/headless.png",
+    ],
     link: "https://triphub-one.vercel.app/",
   },
 ];
