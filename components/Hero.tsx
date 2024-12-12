@@ -33,9 +33,9 @@ const Hero = () => {
           variants={slideInFromLeft(0.5)}
           className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start"
         >
-          <motion.div className="Welcome-box py-[8px] px-[10px] border border-[#3b82f6] opacity-[0.95]">
+          <motion.div className="Welcome-box py-[8px] px-[10px] border border-[#3b82f6] opacity-[0.95] mt-10 lg:mt-0">
             <SparklesIcon className="text-[#93c5fd] mr-[10px] h-5 w-5" />
-            <h1 className="Welcome-text text-[13px] text-white">
+            <h1 className="Welcome-text text-[13px] text-white ">
               Crafting Exceptional{" "}
               <span className="text-[#3b82f6]">Digital Journeys</span>
             </h1>

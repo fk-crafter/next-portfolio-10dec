@@ -96,7 +96,7 @@ export const projectData = [
     title: "TechCorp",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    technologies: ["/next.png", "/tailwind.png", "/ts.png", "/magicui.png"],
+    technologies: ["/next.png", "/tailwind.png", "/ts.png"],
     link: "https://tech-corp-one.vercel.app/",
   },
   {
