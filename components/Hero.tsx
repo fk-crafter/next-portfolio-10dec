@@ -21,6 +21,20 @@ const glowStyle = {
   transition: "filter 0.3s ease-in-out",
 };
 
+const shimmerAnimation = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: [0, 1, 0],
+    x: ["-100%", "100%"],
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      repeatDelay: 8,
+      ease: "easeInOut",
+    },
+  },
+};
+
 const Hero = () => {
   return (
     <div className="relative flex flex-col h-full w-full" id="about-me">
@@ -33,12 +47,18 @@ const Hero = () => {
           variants={slideInFromLeft(0.5)}
           className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start"
         >
-          <motion.div className="Welcome-box py-[8px] px-[10px] border border-[#3b82f6] opacity-[0.95] mt-10 lg:mt-0">
-            <SparklesIcon className="text-[#93c5fd] mr-[10px] h-5 w-5" />
-            <h1 className="Welcome-text text-[13px] text-white ">
+          <motion.div className="Welcome-box py-[8px] px-[10px] border border-[#3b82f6] opacity-[0.95] mt-10 lg:mt-0 relative overflow-hidden">
+            <SparklesIcon className="text-[#93c5fd] mr-[10px] h-5 w-5 z-10 relative" />
+            <h1 className="Welcome-text text-[13px] text-white z-10 relative">
               Crafting Exceptional{" "}
               <span className="text-[#3b82f6]">Digital Journeys</span>
             </h1>
+            <motion.div
+              className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent"
+              variants={shimmerAnimation}
+              initial="initial"
+              animate="animate"
+            />
           </motion.div>
 
           <div className="flex flex-col gap-6 mt-6 text-5xl md:text-6xl font-extrabold text-white max-w-[600px] w-auto h-auto leading-tight">
@@ -127,7 +147,7 @@ const Hero = () => {
 
           <motion.div
             animate={generateFloatingAnimation(0.8)}
-            className="absolute bottom-0 left-1/2 transform -translate-x-1/2"
+            className="absolute bottom-[10%] left-1/2 transform -translate-x-1/2"
           >
             <Image
               src="/ts.png"
@@ -202,6 +222,7 @@ const Hero = () => {
               style={glowStyle}
             />
           </motion.div>
+
           <motion.div
             animate={generateFloatingAnimation(2.2)}
             className="absolute bottom-[10%] left-[15%] transform -translate-y-1/2"
