@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,8 +11,22 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const navbarVariants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#1e293b]/50 bg-[#0f172a]/80 backdrop-blur-lg z-50 px-6">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={navbarVariants}
+      className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#1e293b]/50 bg-[#0f172a]/80 backdrop-blur-lg z-50 px-6"
+    >
       <div className="w-full h-full flex flex-row items-center justify-between m-auto">
         <a href="#about-me" className="flex items-center">
           <Image
@@ -103,50 +118,7 @@ const Navbar = () => {
           </a>
         </div>
       </div>
-
-      {isOpen && (
-        <div className="lg:hidden flex flex-col items-start bg-[#1e293b] px-6 py-4 rounded-lg">
-          <a
-            href="#about-me"
-            className="py-2 text-gray-300 hover:text-[#3b82f6] transition-all duration-300"
-          >
-            About me
-          </a>
-          <a
-            href="#skills"
-            className="py-2 text-gray-300 hover:text-[#3b82f6] transition-all duration-300"
-          >
-            Skills
-          </a>
-          <a
-            href="#projects"
-            className="py-2 text-gray-300 hover:text-[#3b82f6] transition-all duration-300"
-          >
-            Projects
-          </a>
-          <a
-            href="#contact"
-            className="py-2 text-gray-300 hover:text-[#3b82f6] transition-all duration-300"
-          >
-            Contact
-          </a>
-          <a
-            href="https://github.com/fk-crafter"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-start gap-2 py-2 text-gray-300 hover:text-[#3b82f6] transition-all duration-300"
-          >
-            <Image
-              src="/github-142-svgrepo-com.svg"
-              alt="GitHub"
-              width={24}
-              height={24}
-              className="invert"
-            />
-          </a>
-        </div>
-      )}
-    </div>
+    </motion.div>
   );
 };
 
