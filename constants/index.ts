@@ -121,3 +121,20 @@ export const projectData = [
     link: "https://triphub-one.vercel.app/",
   },
 ];
+
+export const TEXT_CONTENT = {
+  EN: {
+    aboutMe: "About me",
+    skills: "Skills",
+    projects: "Projects",
+    contact: "Contact",
+    navbarTitle: "Fk-Crafter",
+  },
+  FR: {
+    aboutMe: "À propos",
+    skills: "Compétences",
+    projects: "Projets",
+    contact: "Contact",
+    navbarTitle: "Fk-Crafter",
+  },
+};

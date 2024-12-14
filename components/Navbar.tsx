@@ -4,11 +4,21 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
+import fr from "@/public/locales/fr/fr.json";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [language, setLanguage] = useState("EN");
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const text = {
+    about: language === "FR" ? fr.navbar.about : "About me",
+    skills: language === "FR" ? fr.navbar.skills : "Skills",
+    projects: language === "FR" ? fr.navbar.projects : "Projects",
+    contact: language === "FR" ? fr.navbar.contact : "Contact",
   };
 
   const navbarVariants = {
@@ -47,27 +57,50 @@ const Navbar = () => {
               href="#about-me"
               className="hover:text-[#3b82f6] transition-all duration-300"
             >
-              About me
+              {text.about}
             </a>
             <a
               href="#skills"
               className="hover:text-[#3b82f6] transition-all duration-300"
             >
-              Skills
+              {text.skills}
             </a>
             <a
               href="#projects"
               className="hover:text-[#3b82f6] transition-all duration-300"
             >
-              Projects
+              {text.projects}
             </a>
             <a
               href="#contact"
               className="hover:text-[#3b82f6] transition-all duration-300"
             >
-              Contact
+              {text.contact}
             </a>
           </div>
+        </div>
+
+        <div className="absolute top-[80px] right-[20px] flex gap-2">
+          <button
+            onClick={() => setLanguage("EN")}
+            className={`px-3 py-1 font-semibold rounded-md transition-all duration-300 ${
+              language === "EN"
+                ? "bg-[#3b82f6] text-white"
+                : "bg-gray-700 text-gray-300"
+            }`}
+          >
+            EN
+          </button>
+          <button
+            onClick={() => setLanguage("FR")}
+            className={`px-3 py-1 font-semibold rounded-md transition-all duration-300 ${
+              language === "FR"
+                ? "bg-[#3b82f6] text-white"
+                : "bg-gray-700 text-gray-300"
+            }`}
+          >
+            FR
+          </button>
         </div>
 
         <div className="lg:hidden flex items-center">
