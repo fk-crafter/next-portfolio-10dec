@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { slideInFromLeft } from "@/utils/motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
+import { useLanguage } from "@/context/LanguageContext";
 
 const generateFloatingAnimation = (delay: number) => ({
   y: [0, -10, 0],
@@ -21,21 +22,9 @@ const glowStyle = {
   transition: "filter 0.3s ease-in-out",
 };
 
-const shimmerAnimation = {
-  initial: { opacity: 0 },
-  animate: {
-    opacity: [0, 1, 0],
-    x: ["-100%", "100%"],
-    transition: {
-      duration: 2,
-      repeat: Infinity,
-      repeatDelay: 8,
-      ease: "easeInOut",
-    },
-  },
-};
-
 const Hero = () => {
+  const { isFrench } = useLanguage();
+
   return (
     <div className="relative flex flex-col h-full w-full" id="about-me">
       <motion.div
@@ -50,42 +39,60 @@ const Hero = () => {
           <motion.div className="Welcome-box py-[8px] px-[10px] border border-[#3b82f6] opacity-[0.95] mt-10 lg:mt-0 relative overflow-hidden">
             <SparklesIcon className="text-[#93c5fd] mr-[10px] h-5 w-5 z-10 relative" />
             <h1 className="Welcome-text text-[13px] text-white z-10 relative">
-              Crafting Exceptional{" "}
-              <span className="text-[#3b82f6]">Digital Journeys</span>
+              {isFrench ? "Créer des" : "Crafting Exceptional"}{" "}
+              <span className="text-[#3b82f6]">
+                {isFrench ? "parcours numériques" : "Digital Journeys"}
+              </span>
             </h1>
-            <motion.div
-              className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent"
-              variants={shimmerAnimation}
-              initial="initial"
-              animate="animate"
-            />
           </motion.div>
 
           <div className="flex flex-col gap-6 mt-6 text-5xl md:text-6xl font-extrabold text-white max-w-[600px] w-auto h-auto leading-tight">
             <span>
-              Bringing
+              {isFrench ? "Donner vie à des " : "Bringing bold ideas"}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7b92b4] to-[#6f87ae]">
                 {" "}
-                bold ideas{" "}
+                {isFrench ? " idées audacieuses " : " bold ideas "}
               </span>
-              to life, one pixel at a time.
+              {isFrench ? "pixel par pixel." : "to life, one pixel at a time."}
             </span>
           </div>
 
           <p className="text-lg text-gray-300 my-5 max-w-[600px] leading-relaxed">
-            Hello, I&apos;m{" "}
-            <span className="text-[#60a5fa] font-semibold">FK-Crafter</span>, a{" "}
-            <span className="text-[#a78bfa] font-semibold pr-1">
-              Fullstack Developer
-            </span>{" "}
-            with a specialization in{" "}
-            <span className="text-[#60a5fa] font-semibold">
-              Front-end Development
-            </span>
-            . I am dedicated to building high-quality, interactive websites and
-            software solutions that stand out.
+            {isFrench ? (
+              <>
+                Bonjour, je suis{" "}
+                <span className="text-[#60a5fa] font-semibold">FK-Crafter</span>
+                , un{" "}
+                <span className="text-[#a78bfa] font-semibold">
+                  Développeur Fullstack
+                </span>{" "}
+                spécialisé dans le{" "}
+                <span className="text-[#60a5fa] font-semibold">
+                  développement Front-end
+                </span>
+                . Je suis dédié à la création de sites web interactifs et de
+                solutions logicielles de haute qualité.
+              </>
+            ) : (
+              <>
+                Hello, I&apos;m{" "}
+                <span className="text-[#60a5fa] font-semibold">FK-Crafter</span>
+                , a{" "}
+                <span className="text-[#a78bfa] font-semibold">
+                  Fullstack Developer
+                </span>{" "}
+                specializing in{" "}
+                <span className="text-[#60a5fa] font-semibold">
+                  Front-end Development
+                </span>
+                . I am dedicated to building high-quality, interactive websites
+                and software solutions that stand out.
+              </>
+            )}
           </p>
         </motion.div>
+
+        {/*  Icone */}
 
         <motion.div
           initial={{ opacity: 0, x: 100 }}
