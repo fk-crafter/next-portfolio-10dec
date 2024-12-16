@@ -167,7 +167,7 @@ const Navbar = () => {
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="fixed top-[75px] right-3 lg:right-5 z-30"
+        className="absolute top-[75px] right-3 lg:right-5 z-30"
       >
         <button
           onClick={toggleLanguage}

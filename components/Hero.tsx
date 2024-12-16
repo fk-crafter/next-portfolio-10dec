@@ -22,6 +22,20 @@ const glowStyle = {
   transition: "filter 0.3s ease-in-out",
 };
 
+const shimmerAnimation = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: [0, 1, 0],
+    x: ["-100%", "100%"],
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      repeatDelay: 8,
+      ease: "easeInOut",
+    },
+  },
+};
+
 const Hero = () => {
   const { isFrench } = useLanguage();
 
@@ -44,11 +58,18 @@ const Hero = () => {
                 {isFrench ? "parcours numériques" : "Digital Journeys"}
               </span>
             </h1>
+
+            <motion.div
+              className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent"
+              variants={shimmerAnimation}
+              initial="initial"
+              animate="animate"
+            />
           </motion.div>
 
           <div className="flex flex-col gap-6 mt-6 text-5xl md:text-6xl font-extrabold text-white max-w-[600px] w-auto h-auto leading-tight">
             <span>
-              {isFrench ? "Donner vie à des " : "Bringing"}
+              {isFrench ? "Donner vie à vos " : "Bringing"}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7b92b4] to-[#6f87ae]">
                 {" "}
                 {isFrench ? " idées audacieuses " : " bold ideas "}
