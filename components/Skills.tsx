@@ -2,9 +2,9 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
 import Image from "next/image";
 import { Backend_skill, Frontend_skill } from "@/constants";
+import { useLanguage } from "@/context/LanguageContext";
 
 const iconAnimation = {
   hidden: { opacity: 0, y: 20 },
@@ -53,27 +53,45 @@ const SkillDataProvider = ({
   );
 };
 
+const textAnimation = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
 const SkillText = () => {
+  const { isFrench } = useLanguage();
+
   return (
-    <div className="w-full h-auto flex flex-col items-center justify-center lg:-mt-24">
+    <div className="w-full h-auto flex flex-col items-center justify-center pt-16">
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        variants={slideInFromLeft(0.2)}
-        className="text-[30px] text-white font-semibold mt-[10px] text-center mb-[15px]"
+        variants={textAnimation}
+        className="text-[30px] text-white font-semibold text-center mb-[15px]"
       >
-        Mastering Modern Frontend & Backend Technologies
+        {isFrench
+          ? "Ma maîtrise en développement Frontend & Backend"
+          : "Mastering Modern Frontend & Backend Technologies"}
       </motion.div>
 
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        variants={slideInFromRight(0.2)}
-        className="text-[20px] text-gray-300 mb-10 mt-[10px] text-center"
+        variants={textAnimation}
+        className="text-[20px] text-gray-300 mb-10 text-center"
       >
-        Building scalable, efficient, and visually stunning applications.
+        {isFrench
+          ? "Créateur de sites web performants, évolutifs et au design soigné."
+          : "Builder of scalable, efficient, and visually stunning websites."}
       </motion.div>
     </div>
   );
