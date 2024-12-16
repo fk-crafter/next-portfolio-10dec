@@ -58,23 +58,6 @@ const Contact = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
       >
-        <motion.div
-          variants={{
-            hidden: { opacity: 0, x: -50 },
-            visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
-          }}
-          className="w-full md:w-1/2 flex flex-col justify-start relative text-gray-300 space-y-4 text-center md:text-left"
-        >
-          <p className="text-lg leading-relaxed">
-            {isFrench
-              ? "Pour me contacter, veuillez utiliser le formulaire ci-dessous. Je m'engage à vous répondre dans les plus brefs délais."
-              : "To contact me, please use the form below. I am committed to responding to your inquiry as quickly as possible."}
-          </p>
-          <p className="flex items-center gap-2 text-lg font-semibold text-[#7b92b4]">
-            📍 {isFrench ? "Basé à Paris" : "Based in Paris"}
-          </p>
-        </motion.div>
-
         <motion.form
           ref={form}
           onSubmit={sendEmail}
@@ -84,45 +67,6 @@ const Contact = () => {
           }}
           className="w-full md:w-1/2 space-y-4 bg-[#1a1c2b] p-6 rounded-lg shadow-lg"
         >
-          <div>
-            <label className="block text-gray-300 mb-2" htmlFor="name">
-              {isFrench ? "Nom" : "Name"}
-            </label>
-            <input
-              type="text"
-              name="from_name"
-              id="name"
-              className="w-full px-4 py-2 bg-[#2b2d42] text-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#7b92b4]"
-              placeholder={isFrench ? "Votre nom" : "Your name"}
-              required
-            />
-          </div>
-          <div>
-            <label className="block text-gray-300 mb-2" htmlFor="email">
-              {isFrench ? "Email" : "Email"}
-            </label>
-            <input
-              type="email"
-              name="from_email"
-              id="email"
-              className="w-full px-4 py-2 bg-[#2b2d42] text-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#7b92b4]"
-              placeholder={isFrench ? "Votre email" : "Your email"}
-              required
-            />
-          </div>
-          <div>
-            <label className="block text-gray-300 mb-2" htmlFor="message">
-              {isFrench ? "Message" : "Message"}
-            </label>
-            <textarea
-              name="message"
-              id="message"
-              rows={5}
-              className="w-full px-4 py-2 bg-[#2b2d42] text-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#7b92b4]"
-              placeholder={isFrench ? "Votre message" : "Your message"}
-              required
-            />
-          </div>
           <button
             type="submit"
             className="w-full px-4 py-2 bg-[#7b92b4] text-white font-semibold rounded hover:bg-[#6f87ae] transition-all duration-300"
@@ -132,29 +76,30 @@ const Contact = () => {
         </motion.form>
       </motion.div>
 
+      {/* Modal de succès avec effet glassmorphism */}
       <AnimatePresence>
         {showSuccessModal && (
           <motion.div
-            className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
+            className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-40 backdrop-blur-md z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
             <motion.div
-              className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center justify-center"
+              className="bg-[#1c1e2b]/70 backdrop-blur-lg p-6 rounded-lg shadow-lg flex flex-col items-center justify-center border border-white/10"
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.8 }}
             >
               <motion.div
-                className="text-green-500 text-6xl mb-4"
+                className="text-green-400 text-6xl mb-4"
                 initial={{ scale: 0 }}
                 animate={{ scale: 1, rotate: 360 }}
                 transition={{ type: "spring", stiffness: 260, damping: 20 }}
               >
                 ✔️
               </motion.div>
-              <p className="text-lg font-semibold text-gray-700">
+              <p className="text-lg font-semibold text-gray-200">
                 {isFrench
                   ? "Message envoyé avec succès !"
                   : "Message successfully sent!"}
