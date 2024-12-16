@@ -54,10 +54,10 @@ const Navbar = () => {
               alt="logo"
               width={50}
               height={50}
-              className="cursor-pointer hover:animate-slowspin"
+              className="cursor-pointer hover:animate-slowspin mb-2"
             />
             <span className="font-bold ml-2 text-gray-300 hover:text-[#3b82f6] transition-all duration-300">
-              Fk-Crafter
+              FK-Crafter
             </span>
           </a>
 

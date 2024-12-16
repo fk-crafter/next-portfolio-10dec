@@ -1,16 +1,22 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { useLanguage } from "@/context/LanguageContext";
+import Lottie from "lottie-react";
+import validateAnimation from "@/public/validate-animation.json"; // Assurez-vous d'utiliser le bon chemin du fichier JSON
 
 const Contact = () => {
   const form = useRef<HTMLFormElement>(null);
   const { isFrench } = useLanguage();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSent, setIsSent] = useState(false);
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
+
+    setIsSubmitting(true);
 
     emailjs
       .sendForm(
@@ -22,27 +28,28 @@ const Contact = () => {
       .then(
         (result) => {
           console.log("Message Sent:", result.text);
-          alert(
-            isFrench
-              ? "Message envoyé avec succès !"
-              : "Message sent successfully!"
-          );
+          setIsSent(true);
+          setIsSubmitting(false);
+
+          // Réinitialiser le formulaire après l'envoi
+          form.current?.reset();
         },
         (error) => {
           console.error("Failed to send message:", error.text);
-          alert(
-            isFrench
-              ? "Échec de l'envoi du message, veuillez réessayer."
-              : "Failed to send message, please try again."
-          );
+          setIsSubmitting(false);
         }
       );
+  };
+
+  // Fermer la modal après un certain temps ou un clic
+  const closeModal = () => {
+    setIsSent(false);
   };
 
   return (
     <section
       id="contact"
-      className="flex flex-col items-center justify-center py-20 z-20 px-4"
+      className="relative flex flex-col items-center justify-center py-20 z-20 px-4"
     >
       <motion.h2
         initial={{ opacity: 0, y: 50 }}
@@ -78,7 +85,7 @@ const Contact = () => {
         </motion.div>
 
         <motion.form
-          ref={form}
+          ref={form} // Référence au formulaire
           onSubmit={sendEmail}
           variants={{
             hidden: { opacity: 0, x: 50 },
@@ -128,11 +135,32 @@ const Contact = () => {
           <button
             type="submit"
             className="w-full px-4 py-2 bg-[#7b92b4] text-white font-semibold rounded hover:bg-[#6f87ae] transition-all duration-300"
+            disabled={isSubmitting}
           >
             {isFrench ? "Envoyer le message" : "Send Message"}
           </button>
         </motion.form>
       </motion.div>
+
+      {/* Modal */}
+      {isSent && (
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-[#1a1c2b] p-8 rounded-lg text-center">
+            <Lottie animationData={validateAnimation} loop={false} />
+            <p className="text-white text-xl font-semibold mt-4">
+              {isFrench
+                ? "Message envoyé avec succès !"
+                : "Message successfully sent!"}
+            </p>
+            <button
+              onClick={closeModal}
+              className="mt-4 px-6 py-2 bg-[#7b92b4] text-white rounded hover:bg-[#6f87ae] transition-all duration-300"
+            >
+              {isFrench ? "Fermer" : "Close"}
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
