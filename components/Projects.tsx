@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { projectData } from "@/constants";
+import { useLanguage } from "@/context/LanguageContext";
 
 const cardAnimation = {
   hidden: { opacity: 0 },
@@ -23,6 +24,8 @@ const titleAnimation = {
 };
 
 const Projects = () => {
+  const { isFrench } = useLanguage();
+
   return (
     <section
       id="projects"
@@ -35,7 +38,7 @@ const Projects = () => {
         variants={titleAnimation}
         className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#7b92b4] to-[#6f87ae] mb-10"
       >
-        My Projects
+        {isFrench ? "Mes Projets" : "My Projects"}
       </motion.h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-5 md:px-10">

@@ -48,7 +48,7 @@ const Hero = () => {
 
           <div className="flex flex-col gap-6 mt-6 text-5xl md:text-6xl font-extrabold text-white max-w-[600px] w-auto h-auto leading-tight">
             <span>
-              {isFrench ? "Donner vie à des " : "Bringing bold ideas"}
+              {isFrench ? "Donner vie à des " : "Bringing"}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7b92b4] to-[#6f87ae]">
                 {" "}
                 {isFrench ? " idées audacieuses " : " bold ideas "}

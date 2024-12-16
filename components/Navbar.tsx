@@ -3,12 +3,12 @@
 import Image from "next/image";
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { useLanguage } from "@/context/LanguageContext"; // Importer le contexte
+import { useLanguage } from "@/context/LanguageContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
-  const { isFrench, toggleLanguage } = useLanguage(); // Accès au contexte
+  const { isFrench, toggleLanguage } = useLanguage();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -41,7 +41,6 @@ const Navbar = () => {
       className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#1e293b]/50 bg-[#0f172a]/80 backdrop-blur-lg z-50 px-6"
     >
       <div className="w-full h-full flex flex-row items-center justify-between m-auto">
-        {/* Logo */}
         <a href="#about-me" className="flex items-center">
           <Image
             src="/NavLogo.png"
@@ -55,7 +54,6 @@ const Navbar = () => {
           </span>
         </a>
 
-        {/* Liens de navigation */}
         <div className="hidden lg:flex w-[500px] justify-between items-center lg:mr-16">
           <div className="flex w-full justify-between border border-[#3b82f6] bg-[#1e293b]/50 px-5 py-2 rounded-full text-gray-200">
             <a
@@ -85,7 +83,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Bouton de changement de langue */}
         <div className="hidden lg:flex items-center">
           <button
             onClick={toggleLanguage}
@@ -95,7 +92,6 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Bouton burger pour mobile */}
         <div className="lg:hidden flex items-center">
           <button
             onClick={toggleMenu}
@@ -127,7 +123,6 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Menu mobile */}
         {isOpen && (
           <div
             ref={menuRef}
@@ -158,7 +153,6 @@ const Navbar = () => {
               {isFrench ? "Contact" : "Contact"}
             </a>
 
-            {/* Bouton de langue dans le menu mobile */}
             <button
               onClick={toggleLanguage}
               className="mt-4 bg-[#1e293b] text-gray-300 px-4 py-2 rounded hover:bg-[#3b82f6] transition-all duration-300"
