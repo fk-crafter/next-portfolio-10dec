@@ -1,13 +1,15 @@
 "use client";
 
-import React, { useRef } from "react";
-import { motion } from "framer-motion";
+import React, { useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { useLanguage } from "@/context/LanguageContext";
 
 const Contact = () => {
   const form = useRef<HTMLFormElement>(null);
   const { isFrench } = useLanguage();
+
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,13 +22,9 @@ const Contact = () => {
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string
       )
       .then(
-        (result) => {
-          console.log("Message Sent:", result.text);
-          alert(
-            isFrench
-              ? "Message envoyé avec succès !"
-              : "Message sent successfully!"
-          );
+        () => {
+          setShowSuccessModal(true);
+          setTimeout(() => setShowSuccessModal(false), 3000);
         },
         (error) => {
           console.error("Failed to send message:", error.text);
@@ -133,6 +131,38 @@ const Contact = () => {
           </button>
         </motion.form>
       </motion.div>
+
+      <AnimatePresence>
+        {showSuccessModal && (
+          <motion.div
+            className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center justify-center"
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.8 }}
+            >
+              <motion.div
+                className="text-green-500 text-6xl mb-4"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1, rotate: 360 }}
+                transition={{ type: "spring", stiffness: 260, damping: 20 }}
+              >
+                ✔️
+              </motion.div>
+              <p className="text-lg font-semibold text-gray-700">
+                {isFrench
+                  ? "Message envoyé avec succès !"
+                  : "Message successfully sent!"}
+              </p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
