@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { useLanguage } from "@/context/LanguageContext";
 import Lottie from "lottie-react";
-import validateAnimation from "@/public/validate-animation.json"; // Assurez-vous d'utiliser le bon chemin du fichier JSON
+import validateAnimation from "@/public/validate-animation.json";
 
 const Contact = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -31,7 +31,6 @@ const Contact = () => {
           setIsSent(true);
           setIsSubmitting(false);
 
-          // Réinitialiser le formulaire après l'envoi
           form.current?.reset();
         },
         (error) => {
@@ -41,7 +40,6 @@ const Contact = () => {
       );
   };
 
-  // Fermer la modal après un certain temps ou un clic
   const closeModal = () => {
     setIsSent(false);
   };
@@ -85,7 +83,7 @@ const Contact = () => {
         </motion.div>
 
         <motion.form
-          ref={form} // Référence au formulaire
+          ref={form}
           onSubmit={sendEmail}
           variants={{
             hidden: { opacity: 0, x: 50 },
@@ -142,7 +140,6 @@ const Contact = () => {
         </motion.form>
       </motion.div>
 
-      {/* Modal */}
       {isSent && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-[#1a1c2b] p-8 rounded-lg text-center">
