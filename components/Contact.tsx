@@ -3,9 +3,11 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Contact = () => {
   const form = useRef<HTMLFormElement>(null);
+  const { isFrench } = useLanguage();
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,11 +22,19 @@ const Contact = () => {
       .then(
         (result) => {
           console.log("Message Sent:", result.text);
-          alert("Message sent successfully!");
+          alert(
+            isFrench
+              ? "Message envoyé avec succès !"
+              : "Message sent successfully!"
+          );
         },
         (error) => {
           console.error("Failed to send message:", error.text);
-          alert("Failed to send message, please try again.");
+          alert(
+            isFrench
+              ? "Échec de l'envoi du message, veuillez réessayer."
+              : "Failed to send message, please try again."
+          );
         }
       );
   };
@@ -41,7 +51,7 @@ const Contact = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#7b92b4] to-[#6f87ae] mb-10 text-center"
       >
-        Contact Me
+        {isFrench ? "Contactez-moi" : "Contact Me"}
       </motion.h2>
 
       <motion.div
@@ -58,11 +68,12 @@ const Contact = () => {
           className="w-full md:w-1/2 flex flex-col justify-start relative text-gray-300 space-y-4 text-center md:text-left"
         >
           <p className="text-lg leading-relaxed">
-            To contact me, please use the form below. I am committed to
-            responding to your inquiry as quickly as possible.
+            {isFrench
+              ? "Pour me contacter, veuillez utiliser le formulaire ci-dessous. Je m'engage à vous répondre dans les plus brefs délais."
+              : "To contact me, please use the form below. I am committed to responding to your inquiry as quickly as possible."}
           </p>
           <p className="flex items-center gap-2 text-lg font-semibold text-[#7b92b4]">
-            📍 Based in Paris
+            📍 {isFrench ? "Basé à Paris" : "Based in Paris"}
           </p>
         </motion.div>
 
@@ -77,40 +88,40 @@ const Contact = () => {
         >
           <div>
             <label className="block text-gray-300 mb-2" htmlFor="name">
-              Name
+              {isFrench ? "Nom" : "Name"}
             </label>
             <input
               type="text"
               name="from_name"
               id="name"
               className="w-full px-4 py-2 bg-[#2b2d42] text-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#7b92b4]"
-              placeholder="Your name"
+              placeholder={isFrench ? "Votre nom" : "Your name"}
               required
             />
           </div>
           <div>
             <label className="block text-gray-300 mb-2" htmlFor="email">
-              Email
+              {isFrench ? "Email" : "Email"}
             </label>
             <input
               type="email"
               name="from_email"
               id="email"
               className="w-full px-4 py-2 bg-[#2b2d42] text-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#7b92b4]"
-              placeholder="Your email"
+              placeholder={isFrench ? "Votre email" : "Your email"}
               required
             />
           </div>
           <div>
             <label className="block text-gray-300 mb-2" htmlFor="message">
-              Message
+              {isFrench ? "Message" : "Message"}
             </label>
             <textarea
               name="message"
               id="message"
               rows={5}
               className="w-full px-4 py-2 bg-[#2b2d42] text-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#7b92b4]"
-              placeholder="Your message"
+              placeholder={isFrench ? "Votre message" : "Your message"}
               required
             />
           </div>
@@ -118,7 +129,7 @@ const Contact = () => {
             type="submit"
             className="w-full px-4 py-2 bg-[#7b92b4] text-white font-semibold rounded hover:bg-[#6f87ae] transition-all duration-300"
           >
-            Send Message
+            {isFrench ? "Envoyer le message" : "Send Message"}
           </button>
         </motion.form>
       </motion.div>
