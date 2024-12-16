@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import Reat, { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { useLanguage } from "@/context/LanguageContext";
@@ -76,7 +76,6 @@ const Contact = () => {
         </motion.form>
       </motion.div>
 
-      {/* Modal de succès avec effet glassmorphism */}
       <AnimatePresence>
         {showSuccessModal && (
           <motion.div
