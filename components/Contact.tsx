@@ -14,7 +14,7 @@ const Contact = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [hasPlayed, setHasPlayed] = useState(false);
 
-  const sendEmail = (e: React.FormEvent) => {
+  const sendEmail = (e: React.FormEvent) => 
     e.preventDefault();
 
     emailjs
