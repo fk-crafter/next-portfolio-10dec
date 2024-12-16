@@ -1,13 +1,18 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { useLanguage } from "@/context/LanguageContext";
+import Lottie from "lottie-react";
+import successAnimation from "@/public/validate-animation.json";
 
 const Contact = () => {
   const form = useRef<HTMLFormElement>(null);
   const { isFrench } = useLanguage();
+
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [hasPlayed, setHasPlayed] = useState(false);
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,30 +24,24 @@ const Contact = () => {
         form.current!,
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string
       )
-      .then(
-        (result) => {
-          console.log("Message Sent:", result.text);
-          alert(
-            isFrench
-              ? "Message envoyé avec succès !"
-              : "Message sent successfully!"
-          );
-        },
-        (error) => {
-          console.error("Failed to send message:", error.text);
-          alert(
-            isFrench
-              ? "Échec de l'envoi du message, veuillez réessayer."
-              : "Failed to send message, please try again."
-          );
-        }
-      );
+      .then(() => {
+        setModalOpen(true);
+        setHasPlayed(true);
+      })
+      .catch((error) => {
+        console.error("Failed to send message:", error.text);
+        alert(
+          isFrench
+            ? "Échec de l'envoi du message, veuillez réessayer."
+            : "Failed to send message, please try again."
+        );
+      });
   };
 
   return (
     <section
       id="contact"
-      className="flex flex-col items-center justify-center py-20 z-20 px-4"
+      className="flex flex-col items-center justify-center py-20 px-4 z-20"
     >
       <motion.h2
         initial={{ opacity: 0, y: 50 }}
@@ -133,6 +132,34 @@ const Contact = () => {
           </button>
         </motion.form>
       </motion.div>
+
+      {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-md z-50">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg p-6 shadow-lg flex flex-col items-center"
+          >
+            <Lottie
+              animationData={successAnimation}
+              style={{ width: 150 }}
+              loop={false}
+            />
+            <h3 className="text-xl font-semibold text-gray-200 mt-4">
+              {isFrench
+                ? "Message envoyé avec succès !"
+                : "Message successfully sent!"}
+            </h3>
+            <button
+              onClick={() => setModalOpen(false)}
+              className="mt-4 px-4 py-2 bg-[#7b92b4] text-white rounded hover:bg-[#6f87ae] transition duration-300"
+            >
+              OK
+            </button>
+          </motion.div>
+        </div>
+      )}
     </section>
   );
 };
