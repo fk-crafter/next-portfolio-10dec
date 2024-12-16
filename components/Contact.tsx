@@ -4,6 +4,7 @@ import React, { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { useLanguage } from "@/context/LanguageContext";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 const Contact = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -132,7 +133,6 @@ const Contact = () => {
         </motion.form>
       </motion.div>
 
-      {/* Glassmorphism Modal */}
       <AnimatePresence>
         {showSuccessModal && (
           <motion.div
@@ -153,7 +153,7 @@ const Contact = () => {
                 animate={{ scale: 1, rotate: 360 }}
                 transition={{ type: "spring", stiffness: 260, damping: 20 }}
               >
-                ✔️
+                <CheckCircleIcon fontSize="inherit" />
               </motion.div>
               <p className="text-lg font-semibold text-white text-center">
                 {isFrench
