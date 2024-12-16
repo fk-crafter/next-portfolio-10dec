@@ -9,6 +9,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const { isFrench, toggleLanguage } = useLanguage();
+  const [isClient, setIsClient] = useState(false); // État pour vérifier si nous sommes côté client
 
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
@@ -16,19 +17,25 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        menuRef.current &&
-        !menuRef.current.contains(event.target as Node) &&
-        !(event.target as HTMLElement).closest("button")
-      ) {
-        setIsOpen(false);
-      }
-    };
+    // Vérifier si nous sommes côté client avant d'accéder à `document`
+    setIsClient(true);
 
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, []);
+    if (isClient) {
+      const handleClickOutside = (event: MouseEvent) => {
+        if (
+          menuRef.current &&
+          !menuRef.current.contains(event.target as Node) &&
+          !(event.target as HTMLElement).closest("button")
+        ) {
+          setIsOpen(false);
+        }
+      };
+
+      document.addEventListener("click", handleClickOutside);
+
+      return () => document.removeEventListener("click", handleClickOutside);
+    }
+  }, [isClient]); // Assurez-vous que `isClient` est mis à jour
 
   const navbarVariants = {
     hidden: { opacity: 0, y: -50 },
