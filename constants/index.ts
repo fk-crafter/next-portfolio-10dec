@@ -88,7 +88,7 @@ export const projectData = [
     src: "/site1.png",
     title: "FinVest",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "A modern landing page dedicated to smart financial management. FinVest offers advanced AI-based analytics tools to optimize your financial decisions and enhance investment performance.",
     technologies: [
       "/next.png",
       "/tailwind.png",
@@ -102,7 +102,7 @@ export const projectData = [
     src: "/site2.png",
     title: "TechCorp",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "An elegant landing page for a company specializing in cutting-edge technology. TechCorp highlights solutions in AI, blockchain, and digital innovation to revolutionize modern industries.",
     technologies: ["/next.png", "/tailwind.png", "/ts.png", "/framer.png"],
     link: "https://tech-corp-one.vercel.app/",
   },
@@ -110,7 +110,7 @@ export const projectData = [
     src: "/site3.png",
     title: "TripHub",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "An inspiring landing page for travel bookings. TripHub simplifies your vacation planning by showcasing tailored offers and dream destinations with a captivating and user-friendly design.",
     technologies: [
       "/next.png",
       "/tailwind.png",

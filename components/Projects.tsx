@@ -29,7 +29,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="flex flex-col items-center justify-center py-20 overflow-hidden z-20"
+      className="flex flex-col items-center justify-center  overflow-hidden z-20"
     >
       <motion.h1
         initial="hidden"
