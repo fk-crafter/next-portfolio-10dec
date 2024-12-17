@@ -20,6 +20,7 @@
     "@react-three/fiber": "^8.17.10",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^11.13.5",
+    "github-calendar": "^2.3.4",
     "i18next": "^24.1.0",
     "lottie-react": "^2.4.0",
     "next": "^14.1.0",
@@ -27,6 +28,7 @@
     "next-intl": "^3.26.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-github-calendar": "^4.5.1",
     "react-i18next": "^15.2.0",
     "react-icons": "^4.11.0",
     "react-modal": "^3.16.1"
