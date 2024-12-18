@@ -6,23 +6,7 @@ import Image from "next/image";
 import { projectData } from "@/constants";
 import { useLanguage } from "@/context/LanguageContext";
 import GitHubCalendar from "react-github-calendar";
-
-const cardAnimation = {
-  hidden: { opacity: 0 },
-  visible: (index: number) => ({
-    opacity: 1,
-    transition: {
-      delay: index * 0.1,
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  }),
-};
-
-const titleAnimation = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 0.5 } },
-};
+import { cardAnimation, titleAnimation } from "@/utils/motion";
 
 const Projects = () => {
   const { isFrench } = useLanguage();

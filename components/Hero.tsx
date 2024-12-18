@@ -6,16 +6,7 @@ import { slideInFromLeft } from "@/utils/motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
-
-const generateFloatingAnimation = (delay: number) => ({
-  y: [0, -10, 0],
-  transition: {
-    duration: 3,
-    repeat: Infinity,
-    ease: "easeInOut",
-    delay,
-  },
-});
+import { generateFloatingAnimation } from "@/utils/motion";
 
 const glowStyle = {
   filter: "drop-shadow(0 0 10px rgba(59, 130, 246, 0.8))",

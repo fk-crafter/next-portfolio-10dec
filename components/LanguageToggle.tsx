@@ -1,12 +1,7 @@
-// context/LanguageContext.tsx
 "use client";
 
 import React, { createContext, useContext, useState, ReactNode } from "react";
-
-interface LanguageContextType {
-  isFrench: boolean;
-  toggleLanguage: () => void;
-}
+import { LanguageContextType } from "@/types";
 
 const LanguageContext = createContext<LanguageContextType | undefined>(
   undefined

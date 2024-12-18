@@ -5,27 +5,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Backend_skill, Frontend_skill } from "@/constants";
 import { useLanguage } from "@/context/LanguageContext";
-
-const iconAnimation = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (index: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: index * 0.1,
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  }),
-};
-
-interface SkillDataProps {
-  src: string;
-  width: number;
-  height: number;
-  index: number;
-  customClass?: string;
-}
+import { SkillDataProps } from "@/types";
+import { iconAnimation, textAnimation } from "@/utils/motion";
 
 const SkillDataProvider = ({
   src,
@@ -51,18 +32,6 @@ const SkillDataProvider = ({
       />
     </motion.div>
   );
-};
-
-const textAnimation = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-    },
-  },
 };
 
 const SkillText = () => {

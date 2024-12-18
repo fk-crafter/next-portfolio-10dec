@@ -37,3 +37,55 @@ export const slideInFromTop = {
     },
   },
 };
+
+export const titleAnimation = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.5 } },
+};
+
+export const cardAnimation = {
+  hidden: { opacity: 0 },
+  visible: (index: number) => ({
+    opacity: 1,
+    transition: {
+      delay: index * 0.1,
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  }),
+};
+
+export const generateFloatingAnimation = (delay: number) => ({
+  y: [0, -10, 0],
+  transition: {
+    duration: 3,
+    repeat: Infinity,
+    ease: "easeInOut",
+    delay,
+  },
+});
+
+export const textAnimation = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+export const iconAnimation = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: index * 0.1,
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  }),
+};
