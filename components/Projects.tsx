@@ -78,17 +78,23 @@ const Projects = () => {
         ))}
       </div>
 
-      <div className="mt-10">
-        <h3 className="text-white text-lg mb-2">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={titleAnimation}
+        className="mt-10"
+      >
+        <h3 className="text-white lg:text-lg lgmb-2">
           {isFrench ? "Mes Contributions" : "My Contributions"}
         </h3>
         <GitHubCalendar
           username="fk-crafter"
-          blockSize={10}
+          blockSize={12}
           blockMargin={5}
           fontSize={14}
         />
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -67,19 +67,32 @@ const Hero = () => {
             />
           </motion.div>
 
-          <div className="flex flex-col gap-6 mt-6 text-5xl md:text-6xl font-extrabold text-white max-w-[600px] w-auto h-auto leading-tight">
+          {/* Texte principal ajusté pour mobile */}
+          <div className="flex flex-col gap-6 mt-6 text-4xl font-extrabold text-white leading-tight lg:text-6xl max-w-[600px] w-auto h-auto">
             <span>
-              {isFrench ? "Transformez vos " : "Bringing"}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7b92b4] to-[#6f87ae]">
-                {" "}
-                {isFrench ? " idées audacieuses " : " bold ideas "}
-              </span>
-              {isFrench
-                ? "en expériences digitales uniques."
-                : "to life, one pixel at a time."}
+              {isFrench ? (
+                <>
+                  <span className="block lg:inline">Transformez vos</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7b92b4] to-[#6f87ae] block lg:inline">
+                    {" idées audacieuses "}
+                  </span>
+                  <span className="block lg:inline">
+                    en expériences digitales uniques.
+                  </span>
+                </>
+              ) : (
+                <>
+                  Bringing
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7b92b4] to-[#6f87ae]">
+                    {" bold ideas "}
+                  </span>
+                  to life, one pixel at a time.
+                </>
+              )}
             </span>
           </div>
 
+          {/* Paragraphe de description */}
           <p className="text-lg text-gray-300 my-5 max-w-[600px] leading-relaxed">
             {isFrench ? (
               <>
