@@ -25,6 +25,7 @@ const Contact = () => {
       .then(
         () => {
           setShowSuccessModal(true);
+          form.current?.reset();
           setTimeout(() => setShowSuccessModal(false), 3000);
         },
         (error) => {
