@@ -67,7 +67,6 @@ const Hero = () => {
             />
           </motion.div>
 
-          {/* Texte principal ajusté pour mobile */}
           <div className="flex flex-col gap-6 mt-6 text-4xl font-extrabold text-white leading-tight lg:text-6xl max-w-[600px] w-auto h-auto">
             <span>
               {isFrench ? (
@@ -92,7 +91,6 @@ const Hero = () => {
             </span>
           </div>
 
-          {/* Paragraphe de description */}
           <p className="text-lg text-gray-300 my-5 max-w-[600px] leading-relaxed">
             {isFrench ? (
               <>

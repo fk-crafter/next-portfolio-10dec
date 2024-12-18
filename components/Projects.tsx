@@ -57,15 +57,31 @@ const Projects = () => {
                 viewport={{ once: true }}
                 custom={index}
                 variants={cardAnimation}
-                className="relative overflow-hidden rounded-lg shadow-lg border border-[#2A0E61] transition-transform duration-300"
+                className="relative overflow-hidden rounded-lg shadow-lg border border-[#2A0E61] transition-transform duration-300 hover:shadow-2xl hover:scale-105"
               >
                 <Image
                   src={project.src}
                   alt={project.title}
                   width={1000}
                   height={1000}
-                  className="w-full h-[200px] object-cover"
+                  className="w-full h-[200px] object-cover transition-transform duration-300"
                 />
+
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex justify-center items-center transition-opacity duration-300">
+                  <div className="flex gap-4">
+                    {project.technologies.map((tech, techIndex) => (
+                      <Image
+                        key={techIndex}
+                        src={tech}
+                        alt="Technology Logo"
+                        width={40}
+                        height={40}
+                        className="w-10 h-10"
+                      />
+                    ))}
+                  </div>
+                </div>
+
                 <div className="p-4 bg-[#1a1c2b]">
                   <h2 className="text-2xl font-semibold text-white">
                     {project.title}
@@ -83,17 +99,20 @@ const Projects = () => {
         whileInView="visible"
         viewport={{ once: true }}
         variants={titleAnimation}
-        className="mt-10"
+        className="mt-10 w-full px-4 lg:px-0"
       >
-        <h3 className="text-white lg:text-lg lgmb-2">
+        <h3 className="text-white text-center lg:text-lg mb-2">
           {isFrench ? "Mes Contributions" : "My Contributions"}
         </h3>
-        <GitHubCalendar
-          username="fk-crafter"
-          blockSize={12}
-          blockMargin={5}
-          fontSize={14}
-        />
+
+        <div className="w-full max-w-full overflow-x-auto flex justify-center">
+          <GitHubCalendar
+            username="fk-crafter"
+            blockSize={12}
+            blockMargin={5}
+            fontSize={12}
+          />
+        </div>
       </motion.div>
     </section>
   );
