@@ -82,27 +82,52 @@ const Contact = () => {
               <Typography
                 variant="h4"
                 component="h2"
-                gutterBottom
-                sx={{ color: "#E5E7EB", fontWeight: "bold" }}
+                sx={{
+                  color: "#E5E7EB",
+                  fontWeight: "bold",
+                  textAlign: { xs: "center", md: "left" },
+                  mb: { xs: 2, sm: 3 },
+                }}
               >
                 {isFrench ? "Contactez-moi" : "Contact Me"}
               </Typography>
+
               <Typography
                 variant="body1"
                 paragraph
-                sx={{ color: "#F3F4F6", lineHeight: 1.8 }}
+                sx={{
+                  color: "#F3F4F6",
+                  lineHeight: 1.6,
+                  textAlign: { xs: "center", md: "left" },
+                  fontSize: { xs: "0.875rem", sm: "1rem" },
+                  mb: { xs: 1.5, sm: 2 },
+                }}
               >
                 {isFrench
                   ? "Besoin d'aide ? Parlons de votre projet. Je m'engage à vous répondre dans les plus brefs délais."
                   : "Need help? Let’s talk about your project. I’m committed to responding as soon as possible."}
               </Typography>
+
               <Typography
                 variant="body2"
-                sx={{ color: "#CBD5E1", fontStyle: "italic", mb: 2 }}
+                sx={{
+                  color: "#CBD5E1",
+                  fontStyle: "italic",
+                  textAlign: { xs: "center", md: "left" },
+                  mb: { xs: 2, sm: 3 },
+                }}
               >
                 📍 {isFrench ? "Basé à Paris" : "Based in Paris"}
               </Typography>
-              <Typography variant="body1" sx={{ color: "#F3F4F6" }}>
+
+              <Typography
+                variant="body1"
+                sx={{
+                  color: "#F3F4F6",
+                  textAlign: { xs: "center", md: "left" },
+                  fontSize: { xs: "0.875rem", sm: "1rem" },
+                }}
+              >
                 {isFrench
                   ? "Prêt à collaborer ? Ensemble, construisons quelque chose d'exceptionnel !"
                   : "Ready to collaborate? Let’s build something exceptional together!"}
