@@ -177,7 +177,7 @@ const Navbar = () => {
       >
         <button
           onClick={toggleLanguage}
-          className="bg-[#1e293b] text-gray-300 px-4 py-2 rounded hover:bg-[#3b82f6] transition-all duration-300 shadow-lg"
+          className="bg-[#1e293b] text-gray-300 px-3 py-1.5 text-sm rounded hover:bg-[#283d5e] mt-2 transition-all duration-300 shadow-lg"
         >
           {isFrench ? "EN" : "FR"}
         </button>
