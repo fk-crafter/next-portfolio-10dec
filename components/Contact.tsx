@@ -202,8 +202,21 @@ const Contact = () => {
                   type="submit"
                   variant="contained"
                   sx={{
-                    backgroundColor: "#1e293b",
-                    ":hover": { backgroundColor: "#374151" },
+                    backgroundColor: "#1E293B",
+                    color: "#E2E8F0",
+                    borderRadius: "8px",
+                    textTransform: "none",
+                    fontWeight: "600",
+                    boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.5)",
+                    transition: "all 0.3s ease-in-out",
+                    ":hover": {
+                      backgroundColor: "#2C3E50",
+                      boxShadow: "0px 6px 10px rgba(0, 0, 0, 0.7)",
+                    },
+                    ":active": {
+                      backgroundColor: "#1B2A38",
+                      transform: "scale(0.98)",
+                    },
                   }}
                 >
                   {isFrench ? "Envoyer le message" : "Send Message"}
