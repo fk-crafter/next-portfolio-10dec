@@ -104,7 +104,7 @@ const Navbar = () => {
           <div className="lg:hidden flex items-center">
             <button
               onClick={toggleMenu}
-              className="text-gray-300 focus:outline-none"
+              className="text-gray-300 focus:outline-none "
             >
               <svg
                 className="w-6 h-6"

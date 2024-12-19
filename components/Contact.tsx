@@ -32,8 +32,8 @@ const Contact = () => {
           console.error("Failed to send message:", error.text);
           alert(
             isFrench
-              ? "Échec de l'envoi du message, veuillez réessayer."
-              : "Failed to send message, please try again."
+              ? "Échec d'envoi, réessayez."
+              : "Sending failed, try again."
           );
         }
       );
@@ -69,8 +69,8 @@ const Contact = () => {
         >
           <p className="text-lg leading-relaxed">
             {isFrench
-              ? "Pour me contacter, veuillez utiliser le formulaire ci-dessous. Je m'engage à vous répondre dans les plus brefs délais."
-              : "To contact me, please use the form below. I am committed to responding to your inquiry as quickly as possible."}
+              ? "Besoin d'aide ? Parlons de votre projet. Je m'engage à vous répondre dans les plus brefs délais."
+              : "Need help ? Let's talk about it. I'm committed to answering your questions as soon as possible."}
           </p>
           <p className="flex items-center justify-center lg:justify-start gap-2 text-lg font-semibold text-[#7b92b4]">
             📍 {isFrench ? "Basé à Paris" : "Based in Paris"}

@@ -41,7 +41,7 @@ const Projects = () => {
                 viewport={{ once: true }}
                 custom={index}
                 variants={cardAnimation}
-                className="relative overflow-hidden rounded-lg shadow-lg border border-[#2A0E61] transition-transform duration-300 hover:shadow-2xl hover:scale-105"
+                className="relative overflow-hidden rounded-lg shadow-lg border border-[#2A0E61] transition-transform duration-300 hover:shadow-2xl"
               >
                 <Image
                   src={project.src}

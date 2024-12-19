@@ -38,7 +38,7 @@ const SkillText = () => {
   const { isFrench } = useLanguage();
 
   return (
-    <div className="w-full h-auto flex flex-col items-center justify-center">
+    <div className="w-full h-auto flex flex-col items-center justify-center ">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -47,7 +47,7 @@ const SkillText = () => {
         className="text-[30px] text-white font-semibold text-center mb-[15px]"
       >
         {isFrench
-          ? "Ma maîtrise en développement Frontend & Backend"
+          ? "Compétences avancées en développement web"
           : "Mastering Modern Frontend & Backend Technologies"}
       </motion.div>
 
