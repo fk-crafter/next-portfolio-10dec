@@ -129,8 +129,8 @@ const Contact = () => {
                 }}
               >
                 {isFrench
-                  ? "Prêt à collaborer ? Ensemble, construisons quelque chose d'exceptionnel !"
-                  : "Ready to collaborate? Let’s build something exceptional together!"}
+                  ? "Ensemble, construisons quelque chose d'exceptionnel !"
+                  : "Let’s build something exceptional together!"}
               </Typography>
             </motion.div>
           </Grid>
