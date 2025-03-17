@@ -120,4 +120,19 @@ export const projectData = [
     ],
     link: "https://triphub-one.vercel.app/",
   },
+  {
+    src: "/site4.png",
+    title: "Tiffany's Touch",
+    description:
+      "Inspired by the elegance and sophistication of a luxury brand, Tiffany's Touch brings a refined aesthetic to the digital world. This landing page seamlessly blends high-end design with modern technology to create an exclusive online presence.",
+    technologies: ["/next.png", "/tailwind.png", "/ts.png", "/framer.png"],
+    link: "https://tiffany-touch.vercel.app/",
+  },
+  {
+    src: "/site5.png",
+    title: "Nintendo e-shop",
+    description:
+      "A dedicated online store for Nintendo enthusiasts, offering a wide range of products, from gaming consoles to exclusive merchandise. The Nintendo e-shop delivers a seamless shopping experience for fans of the iconic brand.",
+    technologies: ["/next.png", "/tailwind.png", "/ts.png", "/framer.png"],
+  },
 ];
