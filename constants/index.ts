@@ -135,4 +135,12 @@ export const projectData = [
       "A dedicated online store for Nintendo enthusiasts, offering a wide range of products, from gaming consoles to exclusive merchandise. The Nintendo e-shop delivers a seamless shopping experience for fans of the iconic brand.",
     technologies: ["/next.png", "/tailwind.png", "/ts.png", "/framer.png"],
   },
+  {
+    src: "/site6.png",
+    title: "TastyMood",
+    description:
+      "A landing page for a food restaurant that offers a wide range of delicious Italian meals. TastyMood provides a seamless and user-friendly experience for customers to order and enjoy their favorite dishes.",
+    technologies: ["/next.png", "/tailwind.png", "/ts.png", "/gsap.png"],
+    link: "https://tasty-mood.vercel.app/",
+  },
 ];
