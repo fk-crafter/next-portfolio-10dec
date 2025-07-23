@@ -48,8 +48,8 @@ export const Frontend_skill = [
     height: 80,
   },
   {
-    skill_name: "Framer Motion",
-    Image: "/framer.png",
+    skill_name: "motion Motion",
+    Image: "/motion.png",
     width: 80,
     height: 80,
   },
@@ -85,6 +85,21 @@ export const Backend_skill = [
 
 export const projectData = [
   {
+    src: "/site0.png",
+    title: "Chuzly",
+    description:
+      "Chuzly is a modern event planning app. Create events, suggest options (dates, locations, prices), and let your friends vote seamlessly. Designed for mobile with a fast and collaborative experience.",
+    technologies: [
+      "/next.png",
+      "/tailwind.png",
+      "/ts.png",
+      "/motion.png",
+      "/magicui.png",
+      "/nestjs.png",
+    ],
+    link: "https://chuzly.app/",
+  },
+  {
     src: "/site1.png",
     title: "FinVest",
     description:
@@ -93,7 +108,7 @@ export const projectData = [
       "/next.png",
       "/tailwind.png",
       "/ts.png",
-      "/framer.png",
+      "/motion.png",
       "/magicui.png",
     ],
     link: "https://finvest-eta.vercel.app/",
@@ -103,7 +118,7 @@ export const projectData = [
     title: "TechCorp",
     description:
       "An elegant landing page for a company specializing in cutting-edge technology. TechCorp highlights solutions in AI, blockchain, and digital innovation to revolutionize modern industries.",
-    technologies: ["/next.png", "/tailwind.png", "/ts.png", "/framer.png"],
+    technologies: ["/next.png", "/tailwind.png", "/ts.png", "/motion.png"],
     link: "https://tech-corp-one.vercel.app/",
   },
   {
@@ -115,7 +130,7 @@ export const projectData = [
       "/next.png",
       "/tailwind.png",
       "/ts.png",
-      "/framer.png",
+      "/motion.png",
       "/headless.png",
     ],
     link: "https://triphub-one.vercel.app/",
@@ -125,7 +140,7 @@ export const projectData = [
     title: "Tiffany's Touch",
     description:
       "Inspired by the elegance and sophistication of a luxury brand, Tiffany's Touch brings a refined aesthetic to the digital world. This landing page seamlessly blends high-end design with modern technology to create an exclusive online presence.",
-    technologies: ["/next.png", "/tailwind.png", "/ts.png", "/framer.png"],
+    technologies: ["/next.png", "/tailwind.png", "/ts.png", "/motion.png"],
     link: "https://tiffany-touch.vercel.app/",
   },
   {
@@ -133,7 +148,7 @@ export const projectData = [
     title: "Nintendo e-shop",
     description:
       "A dedicated online store for Nintendo enthusiasts, offering a wide range of products, from gaming consoles to exclusive merchandise. The Nintendo e-shop delivers a seamless shopping experience for fans of the iconic brand.",
-    technologies: ["/next.png", "/tailwind.png", "/ts.png", "/framer.png"],
+    technologies: ["/next.png", "/tailwind.png", "/ts.png", "/motion.png"],
   },
   {
     src: "/site6.png",

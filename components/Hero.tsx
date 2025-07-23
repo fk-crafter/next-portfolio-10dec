@@ -262,8 +262,8 @@ const Hero = () => {
             className="absolute bottom-[10%] left-[15%] transform -translate-y-1/2"
           >
             <Image
-              src="/framer.png"
-              alt="Framer Motion"
+              src="/motion.png"
+              alt="motion"
               width={50}
               height={50}
               style={glowStyle}
