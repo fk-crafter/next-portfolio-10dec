@@ -42,8 +42,8 @@ export const Frontend_skill = [
     height: 80,
   },
   {
-    skill_name: "Material UI",
-    Image: "/mui.png",
+    skill_name: "Magic UI",
+    Image: "/magicui.png",
     width: 80,
     height: 80,
   },
