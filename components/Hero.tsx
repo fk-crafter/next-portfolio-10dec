@@ -197,10 +197,10 @@ const Hero = () => {
             className="absolute bottom-[20%] left-0 transform -translate-y-1/2"
           >
             <Image
-              src="/node-js.png"
-              alt="Node.js"
-              width={50}
-              height={50}
+              src="/nestjs.png"
+              alt="NestJS"
+              width={100}
+              height={100}
               style={glowStyle}
             />
           </motion.div>

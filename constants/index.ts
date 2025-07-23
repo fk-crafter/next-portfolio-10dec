@@ -64,10 +64,10 @@ export const Frontend_skill = [
 
 export const Backend_skill = [
   {
-    skill_name: "Node.js",
-    Image: "/node-js.png",
-    width: 80,
-    height: 80,
+    skill_name: "NestJS",
+    Image: "/nestjs.png",
+    width: 100,
+    height: 100,
   },
   {
     skill_name: "PostgreSQL",
