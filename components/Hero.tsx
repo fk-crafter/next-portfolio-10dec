@@ -42,8 +42,6 @@ const Hero = () => {
           className="h-full w-full flex flex-col gap-5 justify-center m-auto text-center md:text-start"
         >
           <motion.div className="Welcome-box py-[8px] px-[10px] border border-[#3b82f6] opacity-[0.95] mt-20 lg:-mt-10 relative overflow-hidden ml-6 sm:ml-0">
-            {/* // */}
-
             <SparklesIcon className="text-[#93c5fd] mr-[10px] h-5 w-5 z-10 relative" />
             <h1 className="Welcome-text text-[13px] text-white z-10 relative">
               {isFrench ? "Créer des" : "Crafting Exceptional"}{" "}
@@ -51,7 +49,6 @@ const Hero = () => {
                 {isFrench ? "parcours numériques" : "Digital Journeys"}
               </span>
             </h1>
-
             <motion.div
               className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent"
               variants={shimmerAnimation}
@@ -74,11 +71,10 @@ const Hero = () => {
                 </>
               ) : (
                 <>
-                  Bringing
+                  Launch-ready websites that
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7b92b4] to-[#6f87ae]">
-                    {" bold ideas "}
+                    {" convert, impress, and scale "}
                   </span>
-                  to life, one pixel at a time.
                 </>
               )}
             </span>
@@ -142,72 +138,7 @@ const Hero = () => {
 
           <motion.div
             animate={generateFloatingAnimation(0.2)}
-            className="absolute top-0 left-1/2 transform -translate-x-1/2"
-          >
-            <Image
-              src="/html.png"
-              alt="HTML"
-              width={50}
-              height={50}
-              style={glowStyle}
-            />
-          </motion.div>
-
-          <motion.div
-            animate={generateFloatingAnimation(0.4)}
-            className="absolute top-[20%] right-0 transform -translate-y-1/2"
-          >
-            <Image
-              src="/css.png"
-              alt="CSS"
-              width={50}
-              height={50}
-              style={glowStyle}
-            />
-          </motion.div>
-
-          <motion.div
-            animate={generateFloatingAnimation(0.6)}
-            className="absolute bottom-[20%] right-0 transform -translate-y-1/2"
-          >
-            <Image
-              src="/js.png"
-              alt="JavaScript"
-              width={50}
-              height={50}
-              style={glowStyle}
-            />
-          </motion.div>
-
-          <motion.div
-            animate={generateFloatingAnimation(0.8)}
-            className="absolute bottom-[10%] left-1/2 transform -translate-x-1/2"
-          >
-            <Image
-              src="/ts.png"
-              alt="TypeScript"
-              width={50}
-              height={50}
-              style={glowStyle}
-            />
-          </motion.div>
-
-          <motion.div
-            animate={generateFloatingAnimation(1)}
-            className="absolute bottom-[20%] left-0 transform -translate-y-1/2"
-          >
-            <Image
-              src="/nestjs.png"
-              alt="NestJS"
-              width={100}
-              height={100}
-              style={glowStyle}
-            />
-          </motion.div>
-
-          <motion.div
-            animate={generateFloatingAnimation(1.2)}
-            className="absolute top-[20%] left-0 transform -translate-y-1/2"
+            className="absolute top-[10%] left-[45%] transform -translate-x-1/2"
           >
             <Image
               src="/next.png"
@@ -219,8 +150,34 @@ const Hero = () => {
           </motion.div>
 
           <motion.div
-            animate={generateFloatingAnimation(1.4)}
-            className="absolute top-[50%] left-[10%] transform -translate-y-1/2"
+            animate={generateFloatingAnimation(0.4)}
+            className="absolute top-[30%] right-[10%] transform -translate-y-1/2"
+          >
+            <Image
+              src="/js.png"
+              alt="JavaScript"
+              width={50}
+              height={50}
+              style={glowStyle}
+            />
+          </motion.div>
+
+          <motion.div
+            animate={generateFloatingAnimation(0.6)}
+            className="absolute bottom-[20%] right-[15%] transform -translate-y-1/2"
+          >
+            <Image
+              src="/ts.png"
+              alt="TypeScript"
+              width={50}
+              height={50}
+              style={glowStyle}
+            />
+          </motion.div>
+
+          <motion.div
+            animate={generateFloatingAnimation(0.8)}
+            className="absolute bottom-[20%] left-[50%] transform -translate-x-1/2"
           >
             <Image
               src="/tailwind.png"
@@ -232,8 +189,21 @@ const Hero = () => {
           </motion.div>
 
           <motion.div
-            animate={generateFloatingAnimation(1.6)}
-            className="absolute bottom-[50%] right-[10%] transform -translate-y-1/2"
+            animate={generateFloatingAnimation(1)}
+            className="absolute bottom-[25%] left-[15%] transform -translate-y-1/2"
+          >
+            <Image
+              src="/nestjs.png"
+              alt="NestJS"
+              width={80}
+              height={80}
+              style={glowStyle}
+            />
+          </motion.div>
+
+          <motion.div
+            animate={generateFloatingAnimation(1.2)}
+            className="absolute top-[35%] left-[10%] transform -translate-y-1/2"
           >
             <Image
               src="/prisma.webp"
@@ -245,8 +215,8 @@ const Hero = () => {
           </motion.div>
 
           <motion.div
-            animate={generateFloatingAnimation(2.2)}
-            className="absolute bottom-[55%] left-[30%] transform -translate-y-1/2"
+            animate={generateFloatingAnimation(1.4)}
+            className="absolute top-[10%] left-[25%] transform -translate-y-1/2"
           >
             <Image
               src="/postgre.png"
@@ -258,12 +228,12 @@ const Hero = () => {
           </motion.div>
 
           <motion.div
-            animate={generateFloatingAnimation(2.2)}
-            className="absolute bottom-[10%] left-[15%] transform -translate-y-1/2"
+            animate={generateFloatingAnimation(1.6)}
+            className="absolute bottom-[5%] right-[30%] transform -translate-y-1/2"
           >
             <Image
               src="/motion.png"
-              alt="motion"
+              alt="Motion"
               width={50}
               height={50}
               style={glowStyle}

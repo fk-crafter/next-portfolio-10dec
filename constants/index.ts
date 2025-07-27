@@ -1,31 +1,13 @@
 export const Frontend_skill = [
   {
-    skill_name: "HTML 5",
-    Image: "/html.png",
+    skill_name: "React",
+    Image: "/react.png",
     width: 80,
     height: 80,
-  },
-  {
-    skill_name: "CSS",
-    Image: "/css.png",
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: "JavaScript",
-    Image: "/js.png",
-    width: 65,
-    height: 65,
   },
   {
     skill_name: "Tailwind CSS",
     Image: "/tailwind.png",
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: "React",
-    Image: "/react.png",
     width: 80,
     height: 80,
   },
