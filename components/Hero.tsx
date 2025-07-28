@@ -143,7 +143,7 @@ const Hero = () => {
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="relative hidden md:flex w-[550px] h-[550px] items-center justify-center"
+          className="relative hidden md:flex  items-center justify-center"
         >
           <div className="relative size-full">
             <IconCloud images={localImages} />
