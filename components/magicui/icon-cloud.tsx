@@ -42,7 +42,7 @@ export function IconCloud({ icons, images }: IconCloudProps) {
   const iconCanvasesRef = useRef<HTMLCanvasElement[]>([]);
   const imagesLoadedRef = useRef<boolean[]>([]);
 
-  const ICON_SIZE = 60;
+  const ICON_SIZE = 70;
 
   // Create icon canvases once when icons/images change
   useEffect(() => {
