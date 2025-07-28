@@ -79,12 +79,12 @@ const Hero = () => {
               )}
             </span>
 
-            <motion.div variants={slideInFromLeft(0.6)} className="mt-8">
+            <motion.div variants={slideInFromLeft(0.6)}>
               <a
                 href="#contact"
-                className="inline-block px-6 py-3 text-white font-medium text-lg border border-blue-500 rounded-md hover:bg-blue-500 transition-all duration-300"
+                className="inline-block px-6 py-3 text-white font-semibold text-lg rounded-full border border-blue-500 hover:bg-blue-500 hover:shadow-[0_0_25px_rgba(59,130,246,0.6)] transition-all duration-300"
               >
-                Let’s Work Together
+                {isFrench ? "Contact" : "Let’s Work Together"}
               </a>
             </motion.div>
           </div>
