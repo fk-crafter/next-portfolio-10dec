@@ -7,6 +7,19 @@ import { SparklesIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import { generateFloatingAnimation } from "@/utils/motion";
+import { IconCloud } from "@/components/magicui/icon-cloud";
+
+const localImages = [
+  "/react.png",
+  "/next.png",
+  "/js.png",
+  "/ts.png",
+  "/tailwind.png",
+  "/nestjs.png",
+  "/prisma.webp",
+  "/postgre.png",
+  "/motion.png",
+];
 
 const glowStyle = {
   filter: "drop-shadow(0 0 10px rgba(59, 130, 246, 0.8))",
@@ -130,124 +143,11 @@ const Hero = () => {
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="relative hidden md:block w-[550px] h-[550px]"
+          className="relative hidden md:flex w-[550px] h-[550px] items-center justify-center"
         >
-          <motion.div
-            animate={generateFloatingAnimation(0)}
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-          >
-            <Image
-              src="/react.png"
-              alt="React"
-              width={80}
-              height={80}
-              style={glowStyle}
-            />
-          </motion.div>
-
-          <motion.div
-            animate={generateFloatingAnimation(0.2)}
-            className="absolute top-[10%] left-[45%] transform -translate-x-1/2"
-          >
-            <Image
-              src="/next.png"
-              alt="Next.js"
-              width={50}
-              height={50}
-              style={glowStyle}
-            />
-          </motion.div>
-
-          <motion.div
-            animate={generateFloatingAnimation(0.4)}
-            className="absolute top-[30%] right-[10%] transform -translate-y-1/2"
-          >
-            <Image
-              src="/js.png"
-              alt="JavaScript"
-              width={50}
-              height={50}
-              style={glowStyle}
-            />
-          </motion.div>
-
-          <motion.div
-            animate={generateFloatingAnimation(0.6)}
-            className="absolute bottom-[20%] right-[15%] transform -translate-y-1/2"
-          >
-            <Image
-              src="/ts.png"
-              alt="TypeScript"
-              width={50}
-              height={50}
-              style={glowStyle}
-            />
-          </motion.div>
-
-          <motion.div
-            animate={generateFloatingAnimation(0.8)}
-            className="absolute bottom-[20%] left-[50%] transform -translate-x-1/2"
-          >
-            <Image
-              src="/tailwind.png"
-              alt="Tailwind"
-              width={50}
-              height={50}
-              style={glowStyle}
-            />
-          </motion.div>
-
-          <motion.div
-            animate={generateFloatingAnimation(1)}
-            className="absolute bottom-[25%] left-[15%] transform -translate-y-1/2"
-          >
-            <Image
-              src="/nestjs.png"
-              alt="NestJS"
-              width={80}
-              height={80}
-              style={glowStyle}
-            />
-          </motion.div>
-
-          <motion.div
-            animate={generateFloatingAnimation(1.2)}
-            className="absolute top-[35%] left-[10%] transform -translate-y-1/2"
-          >
-            <Image
-              src="/prisma.webp"
-              alt="Prisma"
-              width={50}
-              height={50}
-              style={glowStyle}
-            />
-          </motion.div>
-
-          <motion.div
-            animate={generateFloatingAnimation(1.4)}
-            className="absolute top-[10%] left-[25%] transform -translate-y-1/2"
-          >
-            <Image
-              src="/postgre.png"
-              alt="PostgreSQL"
-              width={50}
-              height={50}
-              style={glowStyle}
-            />
-          </motion.div>
-
-          <motion.div
-            animate={generateFloatingAnimation(1.6)}
-            className="absolute bottom-[5%] right-[30%] transform -translate-y-1/2"
-          >
-            <Image
-              src="/motion.png"
-              alt="Motion"
-              width={50}
-              height={50}
-              style={glowStyle}
-            />
-          </motion.div>
+          <div className="relative size-full">
+            <IconCloud images={localImages} />
+          </div>
         </motion.div>
       </motion.div>
     </div>
