@@ -22,7 +22,7 @@ const Projects = () => {
       setIsMobile(window.innerWidth < 768);
     };
 
-    handleResize(); // Exécute une fois au chargement
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);

@@ -4,10 +4,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import { slideInFromLeft } from "@/utils/motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
-import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
-import { generateFloatingAnimation } from "@/utils/motion";
 import { IconCloud } from "@/components/magicui/icon-cloud";
+import Link from "next/link";
 
 const localImages = [
   "/react.png",
@@ -93,12 +92,12 @@ const Hero = () => {
             </span>
 
             <motion.div variants={slideInFromLeft(0.6)}>
-              <a
+              <Link
                 href="#contact"
                 className="inline-block px-6 py-3 text-white font-semibold text-lg rounded-full border border-blue-500 hover:bg-blue-500 hover:shadow-[0_0_25px_rgba(59,130,246,0.6)] transition-all duration-300"
               >
                 {isFrench ? "Contact" : "Let’s Work Together"}
-              </a>
+              </Link>
             </motion.div>
           </div>
 

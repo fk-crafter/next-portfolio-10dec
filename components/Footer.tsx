@@ -3,6 +3,7 @@
 import React from "react";
 import { RxGithubLogo } from "react-icons/rx";
 import { useLanguage } from "@/context/LanguageContext";
+import Link from "next/link";
 
 const Footer = () => {
   const { isFrench } = useLanguage();
@@ -10,7 +11,7 @@ const Footer = () => {
   return (
     <div className="w-full bg-[#0f172a] text-gray-200 shadow-lg p-5 relative z-[20]">
       <div className="flex flex-col items-center justify-center gap-3">
-        <a
+        <Link
           href="https://github.com/fk-crafter"
           target="_blank"
           rel="noopener noreferrer"
@@ -19,7 +20,7 @@ const Footer = () => {
         >
           <RxGithubLogo className="text-2xl" />
           <span>GitHub</span>
-        </a>
+        </Link>
 
         <div className="text-sm text-gray-400 mt-2">
           {isFrench
