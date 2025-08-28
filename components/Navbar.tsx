@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,7 +55,7 @@ const Navbar = () => {
         className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#1e293b]/50 bg-[#0f172a]/80 backdrop-blur-lg z-50 px-6"
       >
         <div className="w-full h-full flex flex-row items-center justify-between m-auto">
-          <a href="#about-me" className="flex items-center">
+          <Link href="#about-me" className="flex items-center">
             <Image
               src="/NavLogo.png"
               alt="logo"
@@ -65,27 +66,27 @@ const Navbar = () => {
             <span className="font-bold ml-2 text-gray-300 hover:text-[#3b82f6] transition-all duration-300">
               FK-Crafter
             </span>
-          </a>
+          </Link>
 
           <div className="hidden lg:flex w-[500px] justify-between items-center lg:mr-16">
             <div className="flex w-full justify-between border border-[#3b82f6] bg-[#1e293b]/50 px-5 py-2 rounded-full text-gray-200">
-              <a href="#about-me" className="hover:text-[#3b82f6]">
+              <Link href="#about-me" className="hover:text-[#3b82f6]">
                 {isFrench ? "À propos" : "About me"}
-              </a>
-              <a href="#skills" className="hover:text-[#3b82f6]">
+              </Link>
+              <Link href="#skills" className="hover:text-[#3b82f6]">
                 {isFrench ? "Compétences" : "Skills"}
-              </a>
-              <a href="#projects" className="hover:text-[#3b82f6]">
+              </Link>
+              <Link href="#projects" className="hover:text-[#3b82f6]">
                 {isFrench ? "Projets" : "Projects"}
-              </a>
-              <a href="#contact" className="hover:text-[#3b82f6]">
+              </Link>
+              <Link href="#contact" className="hover:text-[#3b82f6]">
                 {isFrench ? "Contact" : "Contact"}
-              </a>
+              </Link>
             </div>
           </div>
 
           <div className="hidden lg:flex">
-            <a
+            <Link
               href="https://github.com/fk-crafter"
               target="_blank"
               rel="noopener noreferrer"
@@ -98,7 +99,7 @@ const Navbar = () => {
                 height={24}
                 className="invert"
               />
-            </a>
+            </Link>
           </div>
 
           <div className="lg:hidden flex items-center">
@@ -139,20 +140,20 @@ const Navbar = () => {
           ref={menuRef}
           className="absolute top-[65px] left-0 w-full bg-[#0f172a] z-40 flex flex-col items-center py-4 space-y-4"
         >
-          <a href="#about-me" className="text-gray-300 hover:text-[#3b82f6]">
+          <Link href="#about-me" className="text-gray-300 hover:text-[#3b82f6]">
             {isFrench ? "À propos" : "About me"}
-          </a>
-          <a href="#skills" className="text-gray-300 hover:text-[#3b82f6]">
+          </Link>
+          <Link href="#skills" className="text-gray-300 hover:text-[#3b82f6]">
             {isFrench ? "Compétences" : "Skills"}
-          </a>
-          <a href="#projects" className="text-gray-300 hover:text-[#3b82f6]">
+          </Link>
+          <Link href="#projects" className="text-gray-300 hover:text-[#3b82f6]">
             {isFrench ? "Projets" : "Projects"}
-          </a>
-          <a href="#contact" className="text-gray-300 hover:text-[#3b82f6]">
+          </Link>
+          <Link href="#contact" className="text-gray-300 hover:text-[#3b82f6]">
             {isFrench ? "Contact" : "Contact"}
-          </a>
+          </Link>
 
-          <a
+          <Link
             href="https://github.com/fk-crafter"
             target="_blank"
             rel="noopener noreferrer"
@@ -165,7 +166,7 @@ const Navbar = () => {
               height={24}
               className="invert"
             />
-          </a>
+          </Link>
         </div>
       )}
 

@@ -1,54 +1,42 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { projectData } from "@/constants";
 import { useLanguage } from "@/context/LanguageContext";
 import { Marquee } from "@/components/magicui/marquee";
 import GitHubCalendar from "react-github-calendar";
-
-const ProjectCard = ({ project }: { project: any }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
-  return (
-    <div
-      className="relative w-96 h-56 cursor-pointer overflow-hidden rounded-xl mx-4"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <a href={project.link} target="_blank" rel="noopener noreferrer">
-        <Image
-          src={project.src}
-          alt={project.title}
-          width={400}
-          height={250}
-          quality={100}
-          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-        />
-        {isHovered && (
-          <div className="absolute inset-0 bg-black/60 flex justify-center items-center transition-opacity duration-300">
-            <div className="flex gap-4">
-              {project.technologies.map((tech: string, techIndex: number) => (
-                <Image
-                  key={techIndex}
-                  src={tech}
-                  alt="Technology Logo"
-                  width={40}
-                  height={40}
-                  className="w-10 h-10"
-                />
-              ))}
-            </div>
-          </div>
-        )}
-      </a>
-    </div>
-  );
-};
+import ProjectModal from "@/components/ProjectModal";
 
 const Projects = () => {
   const { isFrench } = useLanguage();
+  const router = useRouter();
+
+  const [selectedProject, setSelectedProject] = useState<any | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize(); // Exécute une fois au chargement
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const handleProjectClick = (project: any) => {
+    const slug = project.title.toLowerCase().replace(/\s+/g, "-");
+
+    if (isMobile) {
+      router.push(`/projects/${slug}`);
+    } else {
+      setSelectedProject(project);
+    }
+  };
 
   return (
     <section
@@ -67,7 +55,37 @@ const Projects = () => {
       <div className="w-full max-w-6xl">
         <Marquee pauseOnHover className="[--duration:20s] flex gap-8">
           {projectData.map((project, index) => (
-            <ProjectCard key={index} project={project} />
+            <div
+              key={index}
+              className="relative w-96 h-56 cursor-pointer overflow-hidden rounded-xl mx-4"
+              onClick={() => handleProjectClick(project)}
+            >
+              <Image
+                src={project.src}
+                alt={project.title}
+                width={400}
+                height={250}
+                quality={100}
+                className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+              />
+
+              <div className="absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 flex justify-center items-center transition-opacity duration-300">
+                <div className="flex gap-3">
+                  {project.technologies.map(
+                    (tech: string, techIndex: number) => (
+                      <Image
+                        key={techIndex}
+                        src={tech}
+                        alt="Technology Logo"
+                        width={40}
+                        height={40}
+                        className="w-10 h-10"
+                      />
+                    )
+                  )}
+                </div>
+              </div>
+            </div>
           ))}
         </Marquee>
       </div>
@@ -91,6 +109,14 @@ const Projects = () => {
           />
         </div>
       </motion.div>
+
+      {/* MODAL - desktop only */}
+      {selectedProject && !isMobile && (
+        <ProjectModal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
     </section>
   );
 };
